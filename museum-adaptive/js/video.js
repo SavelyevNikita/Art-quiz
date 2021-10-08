@@ -125,8 +125,8 @@ soundLevel.addEventListener('input', (e) => {
     player.volume = soundLevel.value / 100;
     if (player.volume <= 0) {
         mutedVideo();
-        // } else {
-        //     unMuttedVideo();
+    } else {
+        muteBtn.classList.remove("sound-mute-pressed");
     }
 });
 progress.addEventListener('input', (e) => {
