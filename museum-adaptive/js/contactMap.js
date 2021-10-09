@@ -1,17 +1,29 @@
-// Initialize and add the map
-function initMap() {
-    // The location of Uluru
-    // 48.86149425851698, 2.3354575838744918
-    const uluru = { lat: 48.86149425851698, lng: 2.3354575838744918 };
-    // The map, centered at Uluru
-    console.log(initMap);
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 10,
-        center: uluru,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-    });
-}
+mapboxgl.accessToken = 'pk.eyJ1IjoibmlraXRhMXNhdmVseWV2IiwiYSI6ImNrdWtjYXllMzM2bGUzMW1veDJiY3pnM3gifQ.BSGP5JYOIIHwf9tYJuUtdQ';
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [2.336342, 48.860940],
+    zoom: 16
+});
+map.addControl(new mapboxgl.NavigationControl());
+
+// Create a default Marker and add it to the map.
+const marker1 = new mapboxgl.Marker({
+        color: 'black',
+        rotation: 45
+    })
+    .setLngLat([2.3364, 48.8609])
+    .addTo(map);
+const marker2 = new mapboxgl.Marker()
+    .setLngLat([2.3365, 48.8625])
+    .addTo(map);
+const marker3 = new mapboxgl.Marker()
+    .setLngLat([2.3330, 48.8619])
+    .addTo(map);
+
+const marker4 = new mapboxgl.Marker()
+    .setLngLat([2.3397, 48.8607])
+    .addTo(map);
+const marker5 = new mapboxgl.Marker()
+    .setLngLat([2.3333, 48.8602])
+    .addTo(map);

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
     <!-- <script src="../museum-adaptive/js/script.js"></script> -->
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
@@ -403,7 +405,30 @@
     <script src="../museum-adaptive/js/video.js"></script>
     <script src="../museum-adaptive/js/welcom_slider.js"></script>
     <script src="../museum-adaptive/js/contactMap.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMshKJWU6gg-WAjQP5pLzakOAmWGNrB-M&callback=initMap&libraries=&v=weekly"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMshKJWU6gg-WAjQP5pLzakOAmWGNrB-M&callback=initMap&libraries=&v=weekly"></script> -->
+    <!-- <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibmlraXRhMXNhdmVseWV2IiwiYSI6ImNrdWtjYXllMzM2bGUzMW1veDJiY3pnM3gifQ.BSGP5JYOIIHwf9tYJuUtdQ';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [12.550343, 55.665957],
+            zoom: 8
+        });
+
+        // Create a default Marker and add it to the map.
+        const marker1 = new mapboxgl.Marker()
+            .setLngLat([12.554729, 55.70651])
+            .addTo(map);
+
+        // Create a default Marker, colored black, rotated 45 degrees.
+        const marker2 = new mapboxgl.Marker({
+                color: 'black',
+                rotation: 45
+            })
+            .setLngLat([12.65147, 55.608166])
+            .addTo(map);
+    </script> -->
+
 </body>
 
 </html>
