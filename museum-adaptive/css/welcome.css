@@ -74,11 +74,6 @@
         background: #030303;
         align-items: center;
     }
-    /* .square,
-.digit,
-.slider-button {
-    border: dashed red 1px;
-} */
     .square {
         display: flex;
         align-items: center;
@@ -97,11 +92,13 @@
         font-weight: normal;
         font-size: 22px;
         line-height: 40px;
-        display: flex;
-        align-items: center;
+        /* display: flex; */
+        /* flex-wrap: nowrap; */
+        /* align-items: center; */
         text-transform: uppercase;
         color: #FFFFFF;
     }
+    .square-link-1,
     .square-link-2,
     .square-link-3,
     .square-link-4,
@@ -110,15 +107,15 @@
         height: 19px;
         background: url(../img/square_white.svg) no-repeat;
     }
-    .square-link-1,
     .square-link-1:hover,
     .square-link-2:hover,
     .square-link-3:hover,
     .square-link-4:hover,
     .square-link-5:hover {
-        width: 19px;
-        height: 19px;
-        background: url(../img/square_gold.svg) no-repeat;
+        background: #9D8665;
+    }
+    .selected {
+        background: #9D8665;
     }
     .slider-wraper .slider-button .forward {
         background: url(../img/forward.svg) no-repeat;
@@ -129,7 +126,7 @@
     .slider-wraper .slider-button .forward:hover {
         background: url(../img/forward_gold.svg) no-repeat;
     }
-    .slider-wraper .slider-button.backward:hover {
+    .slider-wraper .slider-button .backward:hover {
         background: url(../img/backward_gold.svg) no-repeat;
     }
     .slider-wraper .slider-button .backward {
@@ -158,13 +155,28 @@
         letter-spacing: 2px;
         color: #FFFFFF;
     }
-    .slider-pic-wraper img {
+    .slider-pic-wraper {
+        /* border: solid 2px white; */
+        width: 1000px;
+        height: 750px;
+        overflow: hidden;
+        /* position: relative; */
+    }
+    .slider-pic-line {
+        width: 5000px;
+        height: 750px;
+        display: flex;
+        position: relative;
+        left: 0px;
+        transition-duration: 1s;
+    }
+    /* .slider-pic-wraper img {
         position: absolute;
         width: 1000px;
         height: 750px;
         right: 0px;
         top: 0px;
-    }
+    } */
 }
 
 @media (max-width: 1919px) and (min-width: 1024px) {

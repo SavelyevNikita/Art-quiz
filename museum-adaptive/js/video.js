@@ -5,9 +5,9 @@ const buttonOnVideo = document.querySelector('.button-video');
 const soundLevel = document.querySelector('#sound_level');
 const screenBtn = document.querySelector('#screen');
 const player = document.querySelector('#main_video');
-// const fortestButton = document.querySelector('.fortest');
 let playTogglet = false;
 let muteTogglet = false;
+let screenTogglet = false;
 let soundLevelSave = 0;
 
 
@@ -42,7 +42,6 @@ function mutedVideo() {
     soundLevel.value = 0;
     muteTogglet = true;
     muteBtn.classList.add("sound-mute-pressed");
-    // soundLevel.disabled = true;
 }
 // ф-я включения звука 
 function unMuttedVideo() {
@@ -50,7 +49,6 @@ function unMuttedVideo() {
     player.volume = soundLevelSave;
     muteTogglet = false;
     muteBtn.classList.remove("sound-mute-pressed");
-    // soundLevel.disabled = false;
 }
 
 function playerMove() {
@@ -67,9 +65,6 @@ function speedDown() {
     player.play();
     player.playbackRate = 0.5;
 }
-// fortestButton.addEventListener('click', reversedVideo);
-
-
 
 playBtn.addEventListener('click', () => {
     if (!playTogglet) {
@@ -83,7 +78,7 @@ buttonOnVideo.addEventListener('click', launchedPlayVideo);
 player.addEventListener('click', stoppedPlayVideo);
 
 document.onkeypress = (e) => {
-    // console.log('onkeypress');
+    e.preventDefault();
     console.log(e.code);
     if ((e.code).toLowerCase() === 'space') {
         if (!playTogglet) {
@@ -100,7 +95,13 @@ document.onkeypress = (e) => {
         }
     };
     if ((e.code).toLowerCase() === 'keyf') {
-        player.requestFullscreen();
+        if (!screenTogglet) {
+            player.requestFullscreen();
+            screenTogglet = true;
+        } else {
+            document.exitFullscreen();
+            screenTogglet = false;
+        }
     };
     if ((e.code).toLowerCase() === 'period') speedUp();
     if ((e.code).toLowerCase() === 'comma') speedDown();

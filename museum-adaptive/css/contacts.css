@@ -75,9 +75,14 @@
         line-height: 26px;
         color: #000000;
     }
-    #contacts .container .wraper .image {
+    /* #contacts .container .wraper .image {
         margin-top: 75px;
         background: url(../img/map_contacts.png);
+        width: 960px;
+        height: 620px;
+    } */
+    #map {
+        margin-top: 75px;
         width: 960px;
         height: 620px;
     }
