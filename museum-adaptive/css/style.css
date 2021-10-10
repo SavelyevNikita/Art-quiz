@@ -374,11 +374,51 @@ html {
         line-height: 21px;
         color: #030303;
     }
+    .basicInfo,
+    .seniorBasic {
+        display: flex;
+        justify-content: space-between;
+    }
     .price {
         margin: 22px 0;
-        background: url(../img/Group431920.png);
+        /* background: url(../img/Group431920.png); */
         width: 470px;
         height: 117px;
+    }
+    .countBasic,
+    .countSenior {
+        width: 32px;
+        height: 32px;
+        background: #030303;
+        border-radius: 5px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #A4A4A3;
+    }
+    .titleBasic,
+    .titleSenior {
+        width: 385px;
+        height: 32px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        color: #030303;
+    }
+    .priceBasic,
+    .priceSenior {
+        width: 43px;
+        height: 32px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        color: #030303;
     }
     .poppup-cardNumber {
         margin: 34px 0 0 19px;
@@ -410,6 +450,23 @@ html {
         width: 75px;
         height: 35px;
         z-index: 10;
+    }
+    .button-book {
+        position: absolute;
+        width: 220px;
+        height: 45px;
+        left: 270px;
+        top: 600px;
+        background: #710707;
+        opacity: 0.9;
+        margin: 0 auto;
+    }
+    .book {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        width: 220px;
+        height: 45px;
     }
 }
 

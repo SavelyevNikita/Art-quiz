@@ -138,3 +138,160 @@ progress.addEventListener('click', (e) => {
     player.currentTime = (progress.value / 100) * player.duration;
     player.play();
 });
+
+
+// video slider
+
+const backwardVideoBtnSlider = document.querySelector('#backward_video');
+const forwardVideoBtnSlider = document.querySelector('#forward_video');
+const list = document.querySelector('.list');
+const roundLink1 = document.querySelector('.round-link-1');
+const roundLink2 = document.querySelector('.round-link-2');
+const roundLink3 = document.querySelector('.round-link-3');
+const roundLink4 = document.querySelector('.round-link-4');
+const roundLink5 = document.querySelector('.round-link-5');
+const iframeVideo1 = document.querySelector('.pre-omg-1');
+const iframeVideo2 = document.querySelector('.pre-omg-2');
+const iframeVideo3 = document.querySelector('.pre-omg-3');
+const iframeVideo4 = document.querySelector('.pre-omg-4');
+const iframeVideo5 = document.querySelector('.pre-omg-5');
+const iframeVideo6 = document.querySelector('.pre-omg-6');
+const iframeVideo7 = document.querySelector('.pre-omg-7');
+const listWraper = document.querySelector('.list-wraper');
+
+let positionInVideo = 0;
+let numPositionInVideo = 1;
+let turnWayInVideo = null;
+
+function changePositionForwardInVideo(num) {
+    if (positionInVideo >= 0) {
+        numPositionInVideo = 5;
+        return positionInVideo = -1968;
+
+    } else {
+        numPositionInVideo -= 1;
+        return positionInVideo += num * 492;
+    }
+}
+
+function changePositionBackwardInVideo(num) {
+    if (positionInVideo <= -1968) {
+        numPositionInVideo = 1;
+        return positionInVideo = 0
+    } else {
+        numPositionInVideo += 1;
+        return positionInVideo -= num * 492;
+    }
+}
+// This code loads the IFrame Player API code asynchronously.
+// JavaScript API вызывает функцию onYouTubeIframeAPIReady, которая позволяет создать объект YT.Player для вставки проигрывателя видео на страницу
+function onYouTubePlayerAPIReady() {
+    console.log('onYouTubePlayerAPIReady');
+    playerYT1 = new YT.Player('pre_omg_1', {
+        events: { 'onReady': onPlayerReady }
+    });
+    playerYT2 = new YT.Player('pre_omg_2', {
+        events: { 'onReady': onPlayerReady }
+    });
+    playerYT3 = new YT.Player('pre_omg_3', {
+        events: { 'onReady': onPlayerReady }
+    });
+    playerYT4 = new YT.Player('pre_omg_4', {
+        events: { 'onReady': onPlayerReady }
+    });
+    playerYT5 = new YT.Player('pre_omg_5', {
+        events: { 'onReady': onPlayerReady }
+    });
+    playerYT6 = new YT.Player('pre_omg_6', {
+        events: { 'onReady': onPlayerReady }
+    });
+    playerYT7 = new YT.Player('pre_omg_7', {
+        events: { 'onReady': onPlayerReady }
+    });
+}
+// остановка видео при клику по слайдеру видео
+function onPlayerReady(event) {
+    listWraper.addEventListener("click", function() {
+        console.log(playerYT1);
+        console.log(playerYT1.getPlayerState());
+        playerYT1.playVideo();
+        if (playerYT1.getPlayerState() === 1) playerYT2.stopVideo();
+        // playerYT1.stopVideo();
+        // playerYT2.stopVideo();
+        // playerYT3.stopVideo();
+        // playerYT4.stopVideo();
+        // playerYT5.stopVideo();
+        // playerYT6.stopVideo();
+        // playerYT7.stopVideo();
+    });
+
+}
+iframeVideo1.addEventListener('click', () => {
+        console.log(playerYT1);
+    })
+    // function stopAllvideo() {
+    //     iframeVideo1.src += "&paused-mode"
+    //     iframeVideo2.src += "&paused-mode"
+    //     iframeVideo3.src += "&paused-mode"
+    //     iframeVideo4.src += "&paused-mode"
+    //     iframeVideo5.src += "&paused-mode"
+    //     iframeVideo6.src += "&paused-mode"
+    //     iframeVideo7.src += "&paused-mode"
+
+// }
+forwardVideoBtnSlider.addEventListener('click', (e) => {
+    list.style.left = changePositionForwardInVideo(1) + "px";
+    updateBulletInVideo();
+    playerYT1.stopVideo();
+    playerYT2.stopVideo();
+    playerYT3.stopVideo();
+    playerYT4.stopVideo();
+    playerYT5.stopVideo();
+    playerYT6.stopVideo();
+    playerYT7.stopVideo();
+
+
+})
+backwardVideoBtnSlider.addEventListener('click', (e) => {
+    list.style.left = changePositionBackwardInVideo(1) + "px";
+    updateBulletInVideo();
+    playerYT1.stopVideo();
+    playerYT2.stopVideo();
+    playerYT3.stopVideo();
+    playerYT4.stopVideo();
+    playerYT5.stopVideo();
+    playerYT6.stopVideo();
+    playerYT7.stopVideo();
+
+})
+
+function updateBulletInVideo() {
+    roundLink1.classList.remove("selectedInVideo");
+    roundLink2.classList.remove("selectedInVideo");
+    roundLink3.classList.remove("selectedInVideo");
+    roundLink4.classList.remove("selectedInVideo");
+    roundLink5.classList.remove("selectedInVideo");
+    // console.log(square.childNodes[1], square.childNodes[2], square.childNodes[3], square.childNodes[4], square.childNodes[5]);
+    switch (String(list.style.left)) {
+        case "0px":
+            roundLink1.classList.add("selectedInVideo");
+            // square.childNodes[1].classList.add("selected");
+            break;
+        case "-492px":
+            roundLink2.classList.add("selectedInVideo");
+            // square.childNodes[2].classList.add("selected");
+            break;
+        case "-984px":
+            roundLink3.classList.add("selectedInVideo");
+            // square.childNodes[3].classList.add("selected");
+            break;
+        case "-1476px":
+            roundLink4.classList.add("selectedInVideo");
+            break;
+        case "-1968px":
+            roundLink5.classList.add("selectedInVideo");
+            break;
+        default:
+            console.log('Неизвестное значение');
+    }
+}
