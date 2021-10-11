@@ -9,7 +9,7 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 // Create a default Marker and add it to the map.
 const marker1 = new mapboxgl.Marker({
-        color: 'gray',
+        color: 'black',
     })
     .setLngLat([2.3364, 48.86091])
     .addTo(map);
