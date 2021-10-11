@@ -4,7 +4,7 @@ const map = new mapboxgl.Map({
     // style: 'mapbox://styles/mapbox/streets-v11',
     style: 'mapbox://styles/mapbox/light-v10',
     center: [2.336342, 48.860940],
-    zoom: 16
+    zoom: 15.75,
 });
 map.addControl(new mapboxgl.NavigationControl());
 

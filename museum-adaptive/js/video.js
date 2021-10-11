@@ -215,14 +215,14 @@ function onPlayerReady(event) {
         console.log(playerYT1);
         console.log(playerYT1.getPlayerState());
         playerYT1.playVideo();
-        if (playerYT1.getPlayerState() === 1) playerYT2.stopVideo();
+        // if (playerYT1.getPlayerState() === 1) playerYT2.stopVideo();
         // playerYT1.stopVideo();
-        // playerYT2.stopVideo();
-        // playerYT3.stopVideo();
-        // playerYT4.stopVideo();
-        // playerYT5.stopVideo();
-        // playerYT6.stopVideo();
-        // playerYT7.stopVideo();
+        playerYT2.stopVideo();
+        playerYT3.stopVideo();
+        playerYT4.stopVideo();
+        playerYT5.stopVideo();
+        playerYT6.stopVideo();
+        playerYT7.stopVideo();
     });
 
 }
