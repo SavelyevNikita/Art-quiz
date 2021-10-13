@@ -157,6 +157,9 @@
     }
     .slider-pic-wraper {
         /* border: solid 2px white; */
+        position: absolute;
+        top: 0px;
+        right: 0px;
         width: 1000px;
         height: 750px;
         overflow: hidden;
