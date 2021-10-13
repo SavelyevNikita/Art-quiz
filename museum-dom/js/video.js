@@ -19,6 +19,14 @@ function launchedPlayVideo() {
     player.play();
     playTogglet = true;
     buttonOnVideo.style.display = 'none';
+    playerYT1.stopVideo();
+    playerYT2.stopVideo();
+    playerYT3.stopVideo();
+    playerYT4.stopVideo();
+    playerYT5.stopVideo();
+    playerYT6.stopVideo();
+    playerYT7.stopVideo();
+
 }
 // ф-я останова плеера
 function stoppedPlayVideo() {
@@ -215,8 +223,6 @@ function onPlayerReady(event) {
         console.log(playerYT1);
         console.log(playerYT1.getPlayerState());
         playerYT1.playVideo();
-        // if (playerYT1.getPlayerState() === 1) playerYT2.stopVideo();
-        // playerYT1.stopVideo();
         playerYT2.stopVideo();
         playerYT3.stopVideo();
         playerYT4.stopVideo();
@@ -227,7 +233,7 @@ function onPlayerReady(event) {
 
 }
 iframeVideo1.addEventListener('click', () => {
-        console.log(playerYT1);
+        // console.log(playerYT1);
     })
     // function stopAllvideo() {
     //     iframeVideo1.src += "&paused-mode"
@@ -264,6 +270,7 @@ backwardVideoBtnSlider.addEventListener('click', (e) => {
     playerYT7.stopVideo();
 
 })
+document.addEventListener('DOMContentLoaded', () => { roundLink1.classList.add("selectedInVideo"); });
 
 function updateBulletInVideo() {
     roundLink1.classList.remove("selectedInVideo");

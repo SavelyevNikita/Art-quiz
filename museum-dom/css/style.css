@@ -468,6 +468,15 @@ html {
         width: 220px;
         height: 45px;
     }
+    .countBasic,
+    .countSenior {
+        padding: 5px 10px;
+    }
+    .total-ticket-poppup {
+        background-color: #030303;
+        width: 470px;
+        height: 38px;
+    }
 }
 
 @media (max-width: 1919px) and (min-width: 1024px) {

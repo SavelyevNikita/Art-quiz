@@ -102,6 +102,36 @@
 }
 
 @media (max-width: 1919px) and (min-width: 1024px) {
+    .img-comp-container {
+        position: absolute;
+        width: 720px;
+        height: 700px;
+        left: 720px;
+        top: 15px;
+        position: relative;
+        /*should be the same height as the images*/
+    }
+    .img-comp-img {
+        position: absolute;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+    }
+    .img-comp-img img {
+        display: block;
+        /* vertical-align: middle; */
+    }
+    .img-comp-slider {
+        position: absolute;
+        z-index: 9;
+        cursor: ew-resize;
+        /*set the appearance of the slider:*/
+        width: 40px;
+        height: 40px;
+        background-color: #ffffff;
+        opacity: 0.7;
+        border-radius: 50%;
+    }
     #explore {
         background-color: #030303;
         /* height: 1149px; */
@@ -166,14 +196,14 @@
     #explore .container .p3 {
         display: none;
     }
-    #explore .container .image {
+    /* #explore .container .image {
         position: absolute;
         width: 720px;
         height: 700px;
         left: 132px;
         top: 329px;
         background: url(../img/explore-slider/after.jpg);
-    }
+    } */
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
