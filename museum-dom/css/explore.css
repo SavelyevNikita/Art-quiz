@@ -67,14 +67,38 @@
         left: 0px;
         top: 397px;
     }
-    #explore .container .image {
+    /* слайдер */
+    .img-comp-container {
         position: absolute;
         width: 720px;
         height: 700px;
         left: 720px;
         top: 15px;
-        background: url(../img/explore-slider/after.jpg);
+        position: relative;
+        /*should be the same height as the images*/
     }
+    .img-comp-img {
+        position: absolute;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+    }
+    .img-comp-img img {
+        display: block;
+        /* vertical-align: middle; */
+    }
+    .img-comp-slider {
+        position: absolute;
+        z-index: 9;
+        cursor: ew-resize;
+        /*set the appearance of the slider:*/
+        width: 40px;
+        height: 40px;
+        background-color: #ffffff;
+        opacity: 0.7;
+        border-radius: 50%;
+    }
+    /* слайдер */
 }
 
 @media (max-width: 1919px) and (min-width: 1024px) {
