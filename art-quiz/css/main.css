@@ -1,6 +1,104 @@
-main {
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+.page-main {
     background: url("../img/j-retrato-de-cardenal-rafael-1.svg") no-repeat;
     width: 360px;
     height: 640px;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.page-main footer, header{
+    width: 100%;
+    height: 43px;
+}
+.page-main footer{
+    margin-top: auto;
+}
+.page-main footer .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 328px;
+    height: 24px;
+    margin: 10px 15px;
+}
+.page-main footer .wrapper .rss-logo{
+    background: url("../img/rs_school_js.png");
+    width: 61px;
+    height : 23px;
+}   
+.page-main footer .wrapper .developer{
+    font-size: 10px;
+	color: white; 
+}
+.page-main footer .wrapper .year{
+    font-size: 20px;
+	color: white; 
+}
+.page-main .wrap-button{
+    width: 268px;
+    height: 56px;
+    border-radius: 56px;
+    border: 1px solid #ffffff;  
+    text-align: center;
+    margin: 20px auto;
+}
+.page-main .wrap-button a{
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    color: #FFFFFF;   
+}
+.page-main .burg-set{
+    background: url("../img/carbon_settings.svg");
+    width: 34px;
+    height: 34px;
+    margin-left: auto;
+}
+.page-main .main-logo{
+    background: url("../img/main-logo.svg");
+    width: 166px;
+    height: 62px;
+    margin: 275px  auto 0;
 }

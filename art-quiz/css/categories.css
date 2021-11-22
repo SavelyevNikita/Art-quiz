@@ -1,0 +1,79 @@
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+.page-categories {
+    background:  #010101;
+    width: 360px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    border: rgb(19, 19, 16) 1px solid;
+}
+.page-categories footer{
+    margin-top: auto;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px 20px 0px 0px;
+    width: 360px;
+    height: 75px;
+}
+.page-categories footer .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 270px;
+    height: 48px;
+    margin: 10px 15px;
+}
+.page-categories footer .wrapper .home{
+    background: url("../img/ico/home.svg");
+    width: 31px;
+    height: 48px;
+}   
+.page-categories footer .wrapper .categories{
+    background: url("../img/ico/categories.svg");
+    width: 58px;
+    height: 48px; 
+}
+.page-categories footer .wrapper .score{
+    background: url("../img/ico/score.svg");
+    width: 30px;
+    height: 48px;
+}
+
