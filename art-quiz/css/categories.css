@@ -1,79 +1,213 @@
-
 /*Обнуление*/
-*{
-	padding: 0;
-	margin: 0;
-	border: 0;
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
-*,*:before,*:after{
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
 
-nav,footer,header,aside{display: block;}
-
-html,body{
-	height: 100%;
-	width: 100%;
-	font-size: 100%;
-	line-height: 1;
-	font-size: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+:focus,
+:active {
+    outline: none;
 }
-input,button,textarea{font-family:inherit;}
 
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top;}
+a:focus,
+a:active {
+    outline: none;
+}
 
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+
 /*--------------------*/
 
+.page-categories header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.page-categories .main-logo {
+    background: url("../img/header-ico.svg") no-repeat;
+    width: 166px;
+    height: 62px;
+    /* margin-left: auto; */
+}
+
+.page-categories .burg-set {
+    background: url("../img/carbon_settings.svg");
+    width: 34px;
+    height: 34px;
+}
+
 .page-categories {
-    background:  #010101;
+    background: #010101;
     width: 360px;
     height: 640px;
     display: flex;
     flex-direction: column;
     border: rgb(19, 19, 16) 1px solid;
 }
-.page-categories footer{
+
+.page-categories footer {
     margin-top: auto;
     border: 1px solid #FFFFFF;
     border-radius: 20px 20px 0px 0px;
     width: 360px;
     height: 75px;
 }
-.page-categories footer .wrapper{
+
+.page-categories footer .wrapper {
+    margin: 15px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 270px;
     height: 48px;
-    margin: 10px 15px;
 }
-.page-categories footer .wrapper .home{
+.page-categories .menu{
+    width: 100%;
+    height: 425px;
+    overflow: auto;
+
+}
+
+.page-categories .menu .head-categories {
+    width: 118px;
+    height: 28px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+    width: 159px;
+    height: 20px;
+}
+.page-categories .menu .categories{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 10px; */
+}
+
+.page-categories .menu .categories .category1 {
+    width: 159px;
+    height: 200px;
+    /* border: white solid 1px; */
+}
+
+.page-categories footer .wrapper .home {
     background: url("../img/ico/home.svg");
     width: 31px;
     height: 48px;
-}   
-.page-categories footer .wrapper .categories{
+}
+
+.page-categories footer .wrapper .categories {
     background: url("../img/ico/categories.svg");
     width: 58px;
-    height: 48px; 
+    height: 48px;
 }
-.page-categories footer .wrapper .score{
+
+.page-categories footer .wrapper .score {
     background: url("../img/ico/score.svg");
     width: 30px;
     height: 48px;
 }
-
+.picture {
+    /* overflow: hidden; */
+    border-radius: 20px;
+    width: 170px;
+    height: 180px; 
+    /* border: white solid 1px; */
+}
+.picture img{
+    width: 100%;
+    height: 100%;  
+}

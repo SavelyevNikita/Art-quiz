@@ -74,11 +74,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	color: white; 
 }
 .page-main .wrap-button{
+    display: flex;
     width: 268px;
     height: 56px;
     border-radius: 56px;
     border: 1px solid #ffffff;  
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     margin: 20px auto;
 }
 .page-main .wrap-button a{

@@ -1,0 +1,207 @@
+/*Обнуление*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+
+/*--------------------*/
+
+.pictures-quiz header .progress-sets {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 337px;
+    height: 28px;
+    margin: 10px 15px;
+}
+
+.pictures-quiz header .progress-sets .progress-bar {
+    background: #A4A4A4;
+    width: 266px;
+    height: 3px;
+}
+
+.pictures-quiz header .progress-sets .progress-time {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.pictures-quiz header .progress-sets .progress-cross {
+    background: url("../img/ico/eva_close-outline.svg") no-repeat;
+    width: 28px;
+    height: 28px;
+}
+
+.pictures-quiz .task .question {
+    width: 100%;
+    height: 125px;
+    left: 16px;
+    top: 74px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+}
+
+.pictures-quiz .task .request-pictures {
+    /* margin: 150px 0 0 0; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-between; */
+}
+
+.pictures-quiz .task .request-pictures .wrap-image-1,
+.wrap-image-2,
+.wrap-image-3,
+.wrap-image-4 {
+    border-radius: 20px;
+    width: 155px;
+    height: 164px;
+    overflow: hidden;
+}
+
+.pictures-quiz .task .request-pictures img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pictures-quiz {
+    background: black;
+    width: 360px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.pictures-quiz footer,
+header {
+    width: 100%;
+    height: 43px;
+}
+
+.pictures-quiz footer {
+    margin-top: auto;
+}
+
+.pictures-quiz footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 328px;
+    height: 24px;
+    margin: 10px 15px;
+}
+
+.pictures-quiz footer .wrapper .rss-logo {
+    background: url("../img/rs_school_js.png");
+    width: 61px;
+    height: 23px;
+}
+
+.pictures-quiz footer .wrapper .developer {
+    font-size: 10px;
+    color: white;
+}
+
+.pictures-quiz footer .wrapper .year {
+    font-size: 20px;
+    color: white;
+}
