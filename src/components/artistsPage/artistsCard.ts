@@ -1,3 +1,6 @@
+import { IGameArtistPage, GameArtistPage } from '../gamePage/gameArtistPage';
+import { ModelData, IModelData, TModeldata} from '../model';
+
 export class ArtistsCard {
   container: HTMLDivElement;
   wrapper: HTMLDivElement;
@@ -7,6 +10,8 @@ export class ArtistsCard {
   score: string;
   scoreCard: HTMLParagraphElement;
   imageCard: HTMLImageElement;
+  gameArtistPage: IGameArtistPage;
+
   constructor(wrapper: HTMLDivElement, header: string, imgPath: string = 'https://klike.net/uploads/posts/2019-05/1556708032_1.jpg', score: string) {
     this.wrapper = wrapper;
     this.header = header;
@@ -22,19 +27,22 @@ export class ArtistsCard {
     this.imageCard.setAttribute('alt', imgPath);
     this.imageCard.setAttribute('src', imgPath);
     this.imageCard.setAttribute('style', 'width:100px; height:100px;');
+    this.gameArtistPage = new GameArtistPage();
+
   }
-  onEvent() {
+  onEvent(callback1: () => void, callback2?: () => void, data?:() => TModeldata) {
     this.container.onclick = () => {
-      console.log(`this.container ${this.header}`);
+      callback1();
+      this.destroy();
+      this.gameArtistPage.render(data, callback2);
     }
   }
-  render() {
+  render(callback1: () => void, callback2?: () => void, data?:() => TModeldata) {
     this.container.appendChild(this.headerCard);
     this.container.appendChild(this.scoreCard);
     this.container.appendChild(this.imageCard);
-
     this.wrapper.appendChild(this.container);
-    this.onEvent();
+    this.onEvent(callback1, callback2, data);
   }
   destroy() {
     this.container.remove();

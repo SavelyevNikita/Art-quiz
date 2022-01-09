@@ -13,7 +13,8 @@ export class SettingsPage {
   save: HTMLButtonElement;
   mainPage:IMainPage;
 
-  constructor() {
+  constructor(mainPage:IMainPage) {
+    this.mainPage = mainPage;
     this.container=document.createElement('div');
     this.containerHeader=document.createElement('p');
     this.save = document.createElement('button');
@@ -21,7 +22,6 @@ export class SettingsPage {
   onEvent(){
     this.save.onclick=()=>{
       this.destroy();
-      this.mainPage = new MainPage();
       this.mainPage.render();
     };
   }

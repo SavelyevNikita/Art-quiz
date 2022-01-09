@@ -1,6 +1,6 @@
-import { SettingsPage, ISettingsPage} from '../settingsPage/settingsPage'
-import { ArtistsPage, IArtistsPage } from '../artistsPage/artistsPage'
-import { PicturePage, IPicturePage } from '../picturePage/picturePage'
+import { SettingsPage, ISettingsPage} from '../settingsPage/settingsPage';
+import { ArtistsPage, IArtistsPage } from '../artistsPage/artistsPage';
+import { PicturePage, IPicturePage } from '../picturePage/picturePage';
 
 export interface IMainPage {
   onEvent: () => void;
@@ -25,23 +25,23 @@ export class MainPage {
     this.settings = document.createElement('button');
     this.artistQuiz = document.createElement('button');
     this.pictureQuiz = document.createElement('button');
+    this.settingsPage = new SettingsPage(this);
+    this.artistsPage = new ArtistsPage(this);
+    this.picturePage = new PicturePage(this);
   }
   onEvent() {
     this.settings.onclick = () => {
       this.destroy();
-      this.artistsPage = new SettingsPage();
-      this.artistsPage.render();
+      this.settingsPage.render();
     };
     this.artistQuiz.onclick = () => {
       this.destroy();
-      this.settingsPage = new ArtistsPage();
-      this.settingsPage.render();
+      this.artistsPage.render();
 
     };
     this.pictureQuiz.onclick = () => {
       this.destroy();
-      this.settingsPage = new PicturePage();
-      this.settingsPage.render();
+      this.picturePage.render();
     };
 
   }
