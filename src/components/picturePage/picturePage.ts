@@ -41,7 +41,7 @@ export class PicturePage {
   }
   renderArtGame() {
     for (let i = 0; i < 6; i += 1) {
-      const pictureCard = new PictureCard(this.categories, i.toString(), `../img/menu-images/${i+1}.png`, i.toString());
+      const pictureCard = new PictureCard(this.categories, i.toString(), `./img/menu-images/${i+1}.png`, i.toString());
       pictureCard.render();
     }
   }

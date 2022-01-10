@@ -51,9 +51,9 @@ export class MainPage {
     this.artistQuiz.textContent = 'artistQuiz';
     this.pictureQuiz.textContent = 'pictureQuiz';
     this.container.appendChild(this.containerHeader);
-    this.container.appendChild(this.settings);
     this.container.appendChild(this.artistQuiz);
     this.container.appendChild(this.pictureQuiz);
+    this.container.appendChild(this.settings);
     document.body.appendChild(this.container);
     this.onEvent();
   }

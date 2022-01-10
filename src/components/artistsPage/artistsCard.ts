@@ -1,7 +1,7 @@
 import { IGameArtistPage, GameArtistPage } from '../gamePage/gameArtistPage';
 import { ModelData, IModelData, TModeldata} from '../model';
 
-export class ArtistsCard {
+export class ArtistsCard extends HTMLElement {
   container: HTMLDivElement;
   wrapper: HTMLDivElement;
   headerCard: HTMLParagraphElement;
@@ -13,6 +13,7 @@ export class ArtistsCard {
   gameArtistPage: IGameArtistPage;
 
   constructor(wrapper: HTMLDivElement, header: string, imgPath: string = 'https://klike.net/uploads/posts/2019-05/1556708032_1.jpg', score: string) {
+    super();
     this.wrapper = wrapper;
     this.header = header;
     this.imgPath = imgPath;

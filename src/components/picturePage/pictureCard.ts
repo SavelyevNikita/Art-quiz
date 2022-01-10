@@ -1,4 +1,4 @@
-export class PictureCard {
+export class PictureCard extends HTMLElement{
   container: HTMLDivElement;
   wrapper: HTMLDivElement;
   headerCard: HTMLParagraphElement;
@@ -8,6 +8,7 @@ export class PictureCard {
   scoreCard: HTMLParagraphElement;
   imageCard: HTMLImageElement;
   constructor(wrapper: HTMLDivElement, header: string, imgPath: string = 'https://klike.net/uploads/posts/2019-05/1556708032_1.jpg', score: string) {
+    super();
     this.wrapper = wrapper;
     this.header = header;
     this.imgPath = imgPath;
