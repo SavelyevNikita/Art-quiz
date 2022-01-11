@@ -45,13 +45,19 @@ export class ArtistsPage {
     this.onEvent();
   }
   renderArtGame() {
-    for (let i = 0; i < 6; i += 1) {
-      const artistsCard = new ArtistsCard(this.categories, i.toString(), `../img/menu-images/${i + 1}.png`, i.toString());
+    this.modelData.nameOfGame.forEach((item,index)=>{
+      console.log(item);
+      const artistsCard = new ArtistsCard(this.categories, item, `./img/menu-images/${index + 1}.png`, item);
       artistsCard.render(this.destroy.bind(this), this.modelData.increaseSmt.bind(this.modelData), this.modelData.getData.bind(this.modelData));
-    }
+    });     
   }
   destroy() {
-    document.body.removeChild(this.container);
+    // console.log('hhh');
+    // document.body.removeChild(this.container);
+    this.container.remove();
+    this.container.innerHTML=null;
+    document.body.innerHTML=null;
+    // this.container=null;
   }
 
 }

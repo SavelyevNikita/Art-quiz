@@ -38,6 +38,16 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
+button {
+    padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+}
+
 .page-main {
     background: url("../img/j-retrato-de-cardenal-rafael-1.svg") no-repeat;
     width: 360px;
@@ -82,8 +92,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     align-items: center;
     justify-content: center;
     margin: 20px auto;
+    cursor: pointer;
 }
-.page-main .wrap-button a{
+.page-main .wrap-button button{
     font-family: Gilroy;
     font-style: normal;
     font-weight: 500;

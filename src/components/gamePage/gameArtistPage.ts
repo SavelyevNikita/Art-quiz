@@ -5,7 +5,7 @@ import { ModelData, IModelData, TModeldata } from '../model'
 
 export interface IGameArtistPage {
   onEvent: () => void;
-  render: (data?:() => TModeldata, callback2?: () => void) => void;
+  render: (data?: () => TModeldata, callback2?: () => void) => void;
   destroy: () => void;
 }
 
@@ -37,7 +37,7 @@ export class GameArtistPage {
     this.artistsPage = new ArtistsPage(this);
     this.mainPage = new MainPage();
   }
-  onEvent(callback2?: () => void, data?:() => TModeldata) {
+  onEvent(callback2?: () => void, data?: () => TModeldata) {
     this.home.onclick = () => {
       this.destroy();
       this.mainPage.render();
@@ -68,8 +68,8 @@ export class GameArtistPage {
       callback2();
     }
   }
-  render(data?:() => TModeldata, callback2?: () => void) {
-    const smt:TModeldata=data()
+  render(data?: () => TModeldata, callback2?: () => void) {
+    const smt: TModeldata = data();
     // console.log(smt);
     this.home.textContent = 'Home';
     this.containerHeader.textContent = 'GameArtistPage';
