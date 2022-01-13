@@ -1,5 +1,5 @@
 import { IGameArtistPage, GameArtistPage } from '../gamePage/gameArtistPage';
-import { ModelData, IModelData, TModeldata } from '../model';
+import { ModelData, IModelData, TModeldata, TExtandData } from '../model';
 
 export class ArtistsCard {
   container: HTMLDivElement;
@@ -26,14 +26,14 @@ export class ArtistsCard {
     this.gameArtistPage = new GameArtistPage();
 
   }
-  onEvent(callback1: () => void, callback2?: () => void, data?: () => TModeldata) {
+  onEvent(callback1: () => void, callback2?: () => void, data?: () => TExtandData) {
     this.container.onclick = () => {
       callback1();
       this.destroy();
       this.gameArtistPage.render(data, callback2);
     }
   }
-  render(callback1: () => void, callback2?: () => void, data?: () => TModeldata) {
+  render(callback1: () => void, callback2?: () => void, data?: () => TExtandData) {
     this.headerCard.setAttribute('style', 'font-family: Gilroy; font-style: normal; font-weight: 500; font-size: 16px; line-height: 18px; letter-spacing: -0.5px;color: #FFFFFF;')
     this.scoreCard.setAttribute('style', 'font-family: Gilroy; font-style: normal; font-weight: 500; font-size: 16px; line-height: 18px; letter-spacing: -0.5px;color: #FFFFFF;')
     this.container.setAttribute('style', 'width:155px; height:200px; cursor:pointer;');

@@ -1,11 +1,11 @@
 import { MainPage, IMainPage } from '../mainPage/mainPage'
 import { ArtistsPage, IArtistsPage } from '../artistsPage/artistsPage'
-import { ModelData, IModelData, TModeldata } from '../model'
+import { ModelData, IModelData, TModeldata, TExtandData } from '../model'
 
 
 export interface IGameArtistPage {
   onEvent: () => void;
-  render: (data?: () => TModeldata, callback2?: () => void) => void;
+  render: (data?: () => TExtandData, callback2?: () => void) => void;
   destroy: () => void;
 }
 
@@ -37,7 +37,7 @@ export class GameArtistPage {
     this.artistsPage = new ArtistsPage(this);
     this.mainPage = new MainPage();
   }
-  onEvent(callback2?: () => void, data?: () => TModeldata) {
+  onEvent(callback2?: () => void, data?: () => TExtandData) {
     this.home.onclick = () => {
       this.destroy();
       this.mainPage.render();
@@ -68,25 +68,21 @@ export class GameArtistPage {
       callback2();
     }
   }
-  render(data?: () => TModeldata, callback2?: () => void) {
-    const smt: TModeldata = data();
-    // console.log(smt);
+  render(data?: () => TExtandData, callback2?: () => void) {
+    const smt: TExtandData = data();
     this.home.textContent = 'Home';
     this.containerHeader.textContent = 'GameArtistPage';
     this.container.appendChild(this.containerHeader);
     this.container.appendChild(this.home);
     this.categories.textContent = 'Categories';
     this.container.appendChild(this.categories);
-    // this.LU.textContent='LU';
     this.LU.textContent = smt.author;
-    // this.RU.textContent='RU';
-    this.RU.textContent = smt.author;
-    // this.LD.textContent='LD';
-    this.LD.textContent = smt.author;
-    this.RD.textContent = smt.author;
+    this.RU.textContent = smt.wrongAuthor1;
+    this.LD.textContent = smt.wrongAuthor2;
+    this.RD.textContent = smt.wrongAuthor3;
     this.image.setAttribute('alt', `./img/img/${smt.imageNum}.webp`);
     this.image.setAttribute('src', `./img/img/${smt.imageNum}.webp`);
-    this.gameField.setAttribute('style', 'width:300px; height:300px; border: 1px solid red')
+    // this.gameField.setAttribute('style', 'width:300px; height:300px; border: 1px solid red')
     this.gameField.appendChild(this.image);
     this.gameField.appendChild(this.LU);
     this.gameField.appendChild(this.RU);

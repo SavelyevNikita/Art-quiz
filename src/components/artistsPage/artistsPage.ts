@@ -1,7 +1,7 @@
 import { MainPage, IMainPage } from '../mainPage/mainPage';
 import { SettingsPage, ISettingsPage} from '../settingsPage/settingsPage';
 import { ArtistsCard } from '../artistsPage/artistsCard';
-import { ModelData, IModelData, TModeldata } from '../model';
+import { ModelData, IModelData, TModeldata, TExtandData } from '../model';
 import data from '../../js/images';
 
 export interface IArtistsPage {
@@ -47,7 +47,7 @@ export class ArtistsPage {
     this.categories = document.createElement('div');
     this.home = document.createElement('div');
     this.settingsPage = new SettingsPage(this);
-    this.modelData = new ModelData(data, 0);
+    this.modelData = new ModelData(data);
     this.mainPage = mainPage;
   }
   onEvent() {
@@ -65,7 +65,6 @@ export class ArtistsPage {
     };
   }
   render() {
-    // this.home.textContent = 'home';
     this.containerHeader.textContent = 'ArtistsPage';
     this.container.setAttribute('class', 'page-categories');
     this.categories.setAttribute('style', 'display:flex;');
@@ -86,10 +85,6 @@ export class ArtistsPage {
     this.wrapper.appendChild(this.wrapper_home);
     this.wrapper.appendChild(this.wrapper_categories);
     this.wrapper.appendChild(this.wrapper_score);
-
-    // this.container.appendChild(this.categories);
-    // this.container.appendChild(this.score);
-    // this.container.appendChild(this.home);
     this.container.appendChild(this.categories);
     this.container.setAttribute('style', 'width:360px; height:640px; background-color: #000; overflow: auto;');
     
@@ -99,18 +94,13 @@ export class ArtistsPage {
   }
   renderArtGame() {
     this.modelData.namesOfGame.forEach((item,index)=>{
-      console.log(item);
       const artistsCard = new ArtistsCard(this.categories, item.gameName, `./img/menu-images/${index + 1}.png`, item.scoreOfGame);
-      artistsCard.render(this.destroy.bind(this), this.modelData.increaseSmt.bind(this.modelData), this.modelData.getData.bind(this.modelData));
+      artistsCard.render(this.destroy.bind(this), this.modelData.increaseSmt.bind(this.modelData), this.modelData.getExtandData.bind(this.modelData));
     });     
   }
   destroy() {
-    // console.log('hhh');
-    // document.body.removeChild(this.container);
-    this.container.remove();
+    // this.container.remove();
     this.container.innerHTML=null;
-    document.body.innerHTML=null;
-    // this.container=null;
   }
 
 }
