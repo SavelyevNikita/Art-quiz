@@ -25,7 +25,7 @@ export interface IModelData {
   increaseSmt: () => void;
   currentData: TModeldata;
   namesOfGame: TcardData[];
-  getExtandData:()=> TExtandData;
+  getExtandData: () => TExtandData;
 }
 
 export class ModelData {
@@ -41,7 +41,7 @@ export class ModelData {
     this.count = 0;
     this.currentData = this.data[0];
     this.rand = Math.round(Math.random() * 230);
-    this.extandData = { ...this.data[this.count], ...{ wrongAuthor1: this.data[this.rand].author, wrongAuthor2: this.data[this.rand+4].author, wrongAuthor3: this.data[this.rand+9].author } }
+    this.extandData = { ...this.data[this.count], ...{ wrongAuthor1: this.data[this.rand].author, wrongAuthor2: this.data[this.rand + 4].author, wrongAuthor3: this.data[this.rand + 9].author } }
     this.namesOfGame = [{ gameName: 'Portrait', scoreOfGame: 0, },
     { gameName: 'Landscape', scoreOfGame: 0, },
     { gameName: 'Still life', scoreOfGame: 0, },
@@ -51,14 +51,20 @@ export class ModelData {
 
   };
   getExtandData() {
-    const rand = Math.round(Math.random() * 230);    
-    return this.extandData = { ...this.data[this.count], ...{ wrongAuthor1: this.data[rand].author, wrongAuthor2: this.data[rand+5].author, wrongAuthor3: this.data[rand+10].author } }
+    const rand = Math.round(Math.random() * 230);
+    return this.extandData = { ...this.data[this.count], ...{ wrongAuthor1: this.data[rand].author, wrongAuthor2: this.data[rand + 5].author, wrongAuthor3: this.data[rand + 10].author } }
   }
   getData() {
     this.currentData = this.data[this.count];
     return this.currentData;
   }
   increaseSmt() {
+    if (this.count <= 240) {
+      this.count += 1;
+    } else {
+      this.count = 0;
+
+    }
     this.count += 1;
     this.getData();
     this.getExtandData();

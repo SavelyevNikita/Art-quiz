@@ -39,7 +39,6 @@ export class ArtistsPage {
     this.wrapper_home = document.createElement('div');
     this.wrapper_categories = document.createElement('div');
     this.wrapper_score = document.createElement('div');
-    this.score = document.createElement('div');
     this.header = document.createElement('header');
     this.main_logo = document.createElement('div');
     this.burg_set = document.createElement('div');
@@ -99,8 +98,8 @@ export class ArtistsPage {
     });     
   }
   destroy() {
-    // this.container.remove();
-    this.container.innerHTML=null;
+    this.container.remove();
+    // this.container.innerHTML=null;
   }
 
 }
