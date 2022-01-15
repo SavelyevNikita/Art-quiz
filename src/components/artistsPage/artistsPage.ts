@@ -99,7 +99,6 @@ export class ArtistsPage {
   }
   destroy() {
     this.container.remove();
-    // this.container.innerHTML=null;
   }
 
 }

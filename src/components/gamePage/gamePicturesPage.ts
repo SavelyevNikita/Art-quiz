@@ -96,7 +96,7 @@ export class GameArtistPage {
       callback2();
     }
   }
-  render(data?: () => TExtandData, newData?: () => void) {
+  render(data?: () => TExtandData, callback2?: () => void) {
     const dataForCard: TExtandData = data();
     this.home.textContent = 'Home';
     this.containerHeader.textContent = 'GameArtistPage';
@@ -146,7 +146,7 @@ export class GameArtistPage {
     this.container.setAttribute('class', 'artists-quiz');
     this.container.appendChild(this.footer);
     document.body.appendChild(this.container);
-    this.onEvent(data, newData);
+    this.onEvent(data, callback2);
   }
   destroy() {
     document.body.removeChild(this.container);

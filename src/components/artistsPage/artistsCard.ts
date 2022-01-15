@@ -26,14 +26,14 @@ export class ArtistsCard {
     this.gameArtistPage = new GameArtistPage();
 
   }
-  onEvent(callback1: () => void, callback2?: () => void, data?: () => TExtandData) {
+  onEvent(destroyArtGame: () => void, increaseCounter?: () => void, data?: () => TExtandData) {
     this.container.onclick = () => {
-      callback1();
+      destroyArtGame();
       this.destroy();
-      this.gameArtistPage.render(data, callback2);
+      this.gameArtistPage.render(data, increaseCounter);
     }
   }
-  render(callback1: () => void, callback2?: () => void, data?: () => TExtandData) {
+  render(destroyArtGame: () => void, increaseCounter?: () => void, data?: () => TExtandData) {
     this.headerCard.setAttribute('style', 'font-family: Gilroy; font-style: normal; font-weight: 500; font-size: 16px; line-height: 18px; letter-spacing: -0.5px;color: #FFFFFF;')
     this.scoreCard.setAttribute('style', 'font-family: Gilroy; font-style: normal; font-weight: 500; font-size: 16px; line-height: 18px; letter-spacing: -0.5px;color: #FFFFFF;')
     this.container.setAttribute('style', 'width:155px; height:200px; cursor:pointer;');
@@ -43,8 +43,7 @@ export class ArtistsCard {
     this.container.appendChild(this.imageCard);
     this.wrapper.setAttribute('style', 'width:340px; height:100%; display:flex; flex-wrap: wrap; justify-content: space-between;');
     this.wrapper.appendChild(this.container);
-    // this.container.setAttribute('style', 'background-color: #000;');
-    this.onEvent(callback1, callback2, data);
+    this.onEvent(destroyArtGame, increaseCounter, data);
   }
   destroy() {
     this.container.remove();

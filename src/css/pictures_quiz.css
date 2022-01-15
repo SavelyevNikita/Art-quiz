@@ -121,6 +121,7 @@ h6 {
     background: url("../img/ico/eva_close-outline.svg") no-repeat;
     width: 28px;
     height: 28px;
+    cursor: pointer;
 }
 
 
