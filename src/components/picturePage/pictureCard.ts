@@ -32,11 +32,7 @@ export class PictureCard{
     this.container.appendChild(this.headerCard);
     this.container.appendChild(this.scoreCard);
     this.container.appendChild(this.imageCard);
-
     this.wrapper.appendChild(this.container);
     this.onEvent();
-  }
-  destroy() {
-    this.container.remove();
   }
 }

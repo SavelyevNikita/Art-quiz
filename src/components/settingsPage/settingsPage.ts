@@ -1,4 +1,4 @@
-import {MainPage, IMainPage} from '../mainPage/mainPage'
+import {MainPage, IMainPage} from '../MainPage/MainPage'
 
 export interface ISettingsPage{
   onEvent:()=>void;

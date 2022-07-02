@@ -1,5 +1,5 @@
-import { MainPage, IMainPage } from '../mainPage/mainPage'
-import { PictureCard } from './pictureCard'
+import { MainPage, IMainPage } from '../MainPage/MainPage'
+import { PictureCard } from './PictureCard'
 
 export interface IPicturePage {
   onEvent: () => void;
@@ -14,8 +14,12 @@ export class PicturePage {
   categories: HTMLDivElement;
   home: HTMLButtonElement;
   mainPage: IMainPage;
+  onHome: () => void;
+  pictureCard: PictureCard;
+  pictureCards: PictureCard[];
 
   constructor(mainPage:IMainPage) {
+    this.pictureCards = [];
     this.container = document.createElement('div');
     this.containerHeader = document.createElement('p');
     this.categories = document.createElement('div');
@@ -24,8 +28,8 @@ export class PicturePage {
   }
   onEvent() {
     this.home.onclick = () => {
-      this.destroy();      
-      this.mainPage.render();
+      this.destroy(); 
+      this.onHome();     
     };
   }
   render() {
@@ -38,6 +42,7 @@ export class PicturePage {
     this.renderArtGame();
     document.body.appendChild(this.container);
     this.onEvent();
+    console.log(this.categories);
   }
   renderArtGame() {
     for (let i = 0; i < 6; i += 1) {
@@ -45,9 +50,8 @@ export class PicturePage {
       pictureCard.render();
     }
   }
-
   destroy() {
+    this.categories.innerHTML = '';
     document.body.removeChild(this.container);
   }
-
 }

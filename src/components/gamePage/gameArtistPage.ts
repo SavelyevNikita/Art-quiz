@@ -1,6 +1,6 @@
-import { MainPage, IMainPage } from '../mainPage/mainPage'
-import { ArtistsPage, IArtistsPage } from '../artistsPage/artistsPage'
-import { ModelData, IModelData, TModeldata, TExtandData } from '../model'
+import { MainPage, IMainPage } from '../MainPage/MainPage';
+import { ArtistsPage, IArtistsPage } from '../ArtistsPage/ArtistsPage';
+import { ModelData, IModelData, TModeldata, TExtandData } from '../Model';
 
 
 export interface IGameArtistPage {

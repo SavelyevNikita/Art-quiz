@@ -1,5 +1,5 @@
-import { IGameArtistPage, GameArtistPage } from '../gamePage/gameArtistPage';
-import { ModelData, IModelData, TModeldata, TExtandData } from '../model';
+import { IGameArtistPage, GameArtistPage } from '../GamePage/GameArtistPage';
+import { TExtandData } from '../Model';
 
 export class ArtistsCard {
   container: HTMLDivElement;
@@ -29,7 +29,6 @@ export class ArtistsCard {
   onEvent(destroyArtGame: () => void, increaseCounter?: () => void, data?: () => TExtandData) {
     this.container.onclick = () => {
       destroyArtGame();
-      this.destroy();
       this.gameArtistPage.render(data, increaseCounter);
     }
   }
@@ -44,8 +43,5 @@ export class ArtistsCard {
     this.wrapper.setAttribute('style', 'width:340px; height:100%; display:flex; flex-wrap: wrap; justify-content: space-between;');
     this.wrapper.appendChild(this.container);
     this.onEvent(destroyArtGame, increaseCounter, data);
-  }
-  destroy() {
-    this.container.remove();
   }
 }

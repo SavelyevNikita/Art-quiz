@@ -1,7 +1,3 @@
-import { SettingsPage, ISettingsPage} from '../settingsPage/settingsPage';
-import { ArtistsPage, IArtistsPage } from '../artistsPage/artistsPage';
-import { PicturePage, IPicturePage } from '../picturePage/picturePage';
-
 
 export interface IMainPage {
   onEvent: () => void;
@@ -28,9 +24,9 @@ export class MainPage {
   settings: HTMLButtonElement;
   artistQuiz: HTMLButtonElement;
   pictureQuiz: HTMLButtonElement;
-  settingsPage: ISettingsPage;
-  artistsPage: IArtistsPage;
-  picturePage: IPicturePage;
+  onSettingsPage: () => void;
+  onArtistQuiz: () => void;
+  onPictureQuiz: () => void;
 
   constructor() {
     this.header=document.createElement('header');
@@ -43,50 +39,45 @@ export class MainPage {
     this.developer = document.createElement('div');
     this.year = document.createElement('div');
 
-
     this.main_logo = document.createElement('div');
     this.wrap_menu = document.createElement('div');
 
     this.Artist_quiz_w=document.createElement('div');
     this.Picture_quiz_w=document.createElement('div');
 
-
     this.container = document.createElement('div');
     this.containerHeader = document.createElement('p');
     this.settings = document.createElement('button');
     this.artistQuiz = document.createElement('button');
     this.pictureQuiz = document.createElement('button');
-    this.settingsPage = new SettingsPage(this);
-    this.artistsPage = new ArtistsPage(this);
-    this.picturePage = new PicturePage(this);
   }
   onEvent() {
     this.settings.onclick = () => {
       this.destroy();
-      this.settingsPage.render();
+      this.onSettingsPage();
     };
     this.Artist_quiz_w.onclick = () => {
       this.destroy();
-      this.artistsPage.render();
-
+      this.onArtistQuiz();
     };
     this.Picture_quiz_w.onclick = () => {
       this.destroy();
-      this.picturePage.render();
+      this.onPictureQuiz();
     };
 
   }
   render() {
     this.settings.textContent = 'settings';
-    this.settings.setAttribute('class','burg-set');
     this.containerHeader.textContent = 'MainPage';
     this.artistQuiz.textContent = 'Artist quiz';
-    this.artistQuiz.setAttribute('id','Artist_quiz');
     this.pictureQuiz.textContent = 'Picture quiz';
+
+    this.settings.className = 'burg-set';
+    this.artistQuiz.setAttribute('id','Artist_quiz');
     this.pictureQuiz.setAttribute('id','Picture_quiz');
 
     this.header.appendChild(this.settings);
-    this.main.setAttribute('class','menu');
+    this.main.className = 'menu';
     this.main.appendChild(this.main_logo);
     this.main.appendChild(this.wrap_menu);
     this.wrap_menu.appendChild(this.Artist_quiz_w);
@@ -95,21 +86,21 @@ export class MainPage {
     this.Picture_quiz_w.appendChild(this.pictureQuiz);
     this.Artist_quiz_w.appendChild(this.artistQuiz);
 
-    this.main_logo.setAttribute('class','main-logo');
-    this.wrap_menu.setAttribute('class','wrap-menu');
-    this.Artist_quiz_w.setAttribute('class','wrap-button');
+    this.main_logo.className = 'main-logo';
+    this.wrap_menu.className = 'wrap-menu';
+    this.Artist_quiz_w.className = 'wrap-button';
     this.Artist_quiz_w.setAttribute('id','Artist_quiz_w');
-    this.Picture_quiz_w.setAttribute('class','wrap-button');
+    this.Picture_quiz_w.className = 'wrap-button';
     this.Picture_quiz_w.setAttribute('id','Picture_quiz_w');    
 
     this.footer.appendChild(this.wrapper);
-    this.wrapper.setAttribute('class','wrapper');
+    this.wrapper.className = 'wrapper';
     this.wrapper.appendChild(this.rss_logo);
     this.rss_logo.setAttribute('class','rss-logo');
     this.wrapper.appendChild(this.developer);
     this.developer.textContent='App developer: Nikita Savelyev';
-    this.developer.setAttribute('class','developer');
-    this.year.setAttribute('class','year');
+    this.developer.className = 'developer';
+    this.year.className = 'year';
     this.year.textContent='2021';
     this.wrapper.appendChild(this.year);
 
@@ -117,7 +108,7 @@ export class MainPage {
     this.container.appendChild(this.header);
     this.container.appendChild(this.main);
     this.container.appendChild(this.footer);
-    this.container.setAttribute('class','page-main');
+    this.container.className = 'page-main';
     document.body.appendChild(this.container);
     this.onEvent();
   }
@@ -126,3 +117,4 @@ export class MainPage {
   }
 
 }
+

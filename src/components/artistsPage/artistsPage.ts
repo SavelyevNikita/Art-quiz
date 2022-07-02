@@ -1,7 +1,7 @@
-import { MainPage, IMainPage } from '../mainPage/mainPage';
-import { SettingsPage, ISettingsPage} from '../settingsPage/settingsPage';
-import { ArtistsCard } from '../artistsPage/artistsCard';
-import { ModelData, IModelData, TModeldata, TExtandData } from '../model';
+import {  IMainPage } from '../MainPage/MainPage';
+import { SettingsPage, ISettingsPage} from '../SettingsPage/SettingsPage';
+import { ArtistsCard } from './ArtistsCard';
+import { ModelData, IModelData } from '../Model';
 import data from '../../js/images';
 
 export interface IArtistsPage {
@@ -15,7 +15,7 @@ export class ArtistsPage {
   containerHeader: HTMLParagraphElement;
   container: HTMLDivElement;
   categories: HTMLDivElement;
-  score: HTMLDivElement;
+  // score: HTMLDivElement;
   wrapper: HTMLDivElement;
   header: HTMLElement;
   wrapper_home: HTMLElement;
@@ -26,10 +26,12 @@ export class ArtistsPage {
   footer: HTMLElement;
   home: HTMLDivElement;
   settings: HTMLButtonElement;
-  button: HTMLButtonElement;
+  // button: HTMLButtonElement;
   mainPage: IMainPage;
   modelData: IModelData;
   settingsPage: ISettingsPage;
+  onSettingsPage: () => void;
+  onHome: () => void;
 
   constructor(mainPage: IMainPage) {
     this.settings = document.createElement('button');
@@ -52,21 +54,20 @@ export class ArtistsPage {
   onEvent() {
     this.settings.onclick = () => {
       this.destroy();
-      this.settingsPage.render();
+      this.onSettingsPage();
     };
     this.home.onclick = () => {
       this.destroy();
-      this.mainPage.render();
+      this.onHome();
     };
     this.wrapper_home.onclick = () => {
       this.destroy();
-      this.mainPage.render();
+      this.onHome();
     };
   }
   render() {
     this.containerHeader.textContent = 'ArtistsPage';
-    this.container.setAttribute('class', 'page-categories');
-    this.categories.setAttribute('style', 'display:flex;');
+    this.container.className = 'page-categories';
     this.renderArtGame();
     this.container.appendChild(this.containerHeader);
 
@@ -85,7 +86,6 @@ export class ArtistsPage {
     this.wrapper.appendChild(this.wrapper_categories);
     this.wrapper.appendChild(this.wrapper_score);
     this.container.appendChild(this.categories);
-    this.container.setAttribute('style', 'width:360px; height:640px; background-color: #000; overflow: auto;');
     
     this.container.appendChild(this.footer);
     document.body.appendChild(this.container);
@@ -98,6 +98,7 @@ export class ArtistsPage {
     });     
   }
   destroy() {
+    this.categories.innerHTML = '';
     this.container.remove();
   }
 

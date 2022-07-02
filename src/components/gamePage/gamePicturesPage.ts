@@ -1,6 +1,6 @@
-import { MainPage, IMainPage } from '../mainPage/mainPage'
-import { ArtistsPage, IArtistsPage } from '../artistsPage/artistsPage'
-import { ModelData, IModelData, TModeldata, TExtandData } from '../model'
+import { MainPage, IMainPage } from '../MainPage/MainPage'
+import { ArtistsPage, IArtistsPage } from '../ArtistsPage/ArtistsPage'
+import { ModelData, IModelData, TModeldata, TExtandData } from '../Model'
 
 
 export interface IGameArtistPage {
@@ -19,7 +19,6 @@ export class GameArtistPage {
   mainPage: IMainPage;
   artistsPage: IArtistsPage;
   image: HTMLImageElement;
-  imageWrapper: HTMLElement;
   LU: HTMLButtonElement;
   RU: HTMLButtonElement;
   LD: HTMLButtonElement;
@@ -38,6 +37,7 @@ export class GameArtistPage {
   progressTime: HTMLElement;
 
   constructor() {
+    console.log('GameArtistPage');    
     this.header = document.createElement('header');
     this.progressSets = document.createElement('div');
     this.progressCross = document.createElement('div');
