@@ -5,7 +5,7 @@ import { ModelData, IModelData, TModeldata, TExtandData } from '../Model';
 
 export interface IGameArtistPage {
   onEvent: () => void;
-  render: (data?: () => TExtandData, callback2?: () => void) => void;
+  render: (data?: () => TExtandData) => void;
   destroy: () => void;
 }
 
@@ -36,6 +36,13 @@ export class GameArtistPage {
   progressCross: HTMLElement;
   progressBar: HTMLElement;
   progressTime: HTMLElement;
+  onArtistsPage: () => void;
+  onMainPage: () => void;
+  onRD: () => void;
+  onLD: () => void;
+  onRU: () => void;
+  onLU: () => void;
+
 
   constructor() {
     this.header = document.createElement('header');
@@ -62,41 +69,37 @@ export class GameArtistPage {
     this.RD = document.createElement('button');
     this.home = document.createElement('button');
     this.categories = document.createElement('button');
-    this.artistsPage = new ArtistsPage(this);
-    this.mainPage = new MainPage();
   }
-  onEvent(data?: () => TExtandData, callback2?: () => void) {
+  onEvent(data?: () => TExtandData) {
     this.progressCross.onclick = () => {
       this.destroy();
-      this.mainPage.render();
+      this.onMainPage();
     };
     this.categories.onclick = () => {
       this.destroy();
-      this.artistsPage.render();
     };
     this.LU.onclick = () => {
       this.destroy();
-      console.log(data());
-      this.render(data, callback2);
-      callback2();
+      this.onLU();
+      this.render(data);
     }
     this.RU.onclick = () => {
       this.destroy();
-      this.render(data, callback2);
-      callback2();
+      this.onRU();
+      this.render(data);
     }
     this.LD.onclick = () => {
       this.destroy();
-      this.render(data, callback2);
-      callback2();
+      this.onLD();
+      this.render(data);
     }
     this.RD.onclick = () => {
       this.destroy();
-      this.render(data, callback2);
-      callback2();
+      this.onRD();
+      this.render(data);
     }
   }
-  render(data?: () => TExtandData, newData?: () => void) {
+  render(data?: () => TExtandData) {
     const dataForCard: TExtandData = data();
     this.home.textContent = 'Home';
     this.containerHeader.textContent = 'GameArtistPage';
@@ -137,7 +140,7 @@ export class GameArtistPage {
     this.wrapper.appendChild(this.developer);
     this.developer.textContent = 'App developer: Nikita Savelyev';
     this.wrapper.appendChild(this.year);
-    this.year.textContent = '2021';
+    this.year.textContent = '2022';
 
     this.container.appendChild(this.header);
     this.container.appendChild(this.question);
@@ -146,7 +149,7 @@ export class GameArtistPage {
     this.container.setAttribute('class', 'artists-quiz');
     this.container.appendChild(this.footer);
     document.body.appendChild(this.container);
-    this.onEvent(data, newData);
+    this.onEvent(data);
   }
   destroy() {
     document.body.removeChild(this.container);

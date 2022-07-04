@@ -45,13 +45,13 @@ const config = {
                 exclude: ['/node_modules/'],
             },
             {
-                test: /\.css$/i,
+                test: /\.(scss|css)$/i,
                 use: ["style-loader", "css-loader"],
             },
-            {
-                test: /\.s[ac]ss$/i,
-                use: ["style-loader", "css-loader", "sass-loader"],
-            },
+            // {
+            //     test: /\.(scss|css)$/,
+            //     use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+            // },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset',

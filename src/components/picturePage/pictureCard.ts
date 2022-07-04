@@ -6,22 +6,18 @@ export class PictureCard{
   imgPath: string;
   score: string;
   scoreCard: HTMLParagraphElement;
-  imageCard: HTMLImageElement;
+  imageCard: HTMLDivElement;
   constructor(wrapper: HTMLDivElement, header: string, imgPath: string = 'https://klike.net/uploads/posts/2019-05/1556708032_1.jpg', score: string) {
     this.wrapper = wrapper;
     this.header = header;
     this.imgPath = imgPath;
     this.score = score;
     this.container = document.createElement('div');
-    this.container.setAttribute('style', 'display:flex; width:150px; height:150px; cursor:pointer');
     this.headerCard = document.createElement('p');
     this.scoreCard = document.createElement('p');
-    this.imageCard = document.createElement('img');
+    this.imageCard = document.createElement('div');
     this.headerCard.textContent = this.header;
-    this.scoreCard.textContent = this.score;
-    this.imageCard.setAttribute('alt', imgPath);
-    this.imageCard.setAttribute('src', imgPath);
-    this.imageCard.setAttribute('style', 'width:100px; height:100px;');
+    this.scoreCard.textContent = this.score.toString();
   }
   onEvent() {
     this.container.onclick = () => {
@@ -29,9 +25,17 @@ export class PictureCard{
     }
   }
   render() {
-    this.container.appendChild(this.headerCard);
-    this.container.appendChild(this.scoreCard);
+    this.headerCard.className = 'card-header';
+    this.scoreCard.className = 'card-score';
+    this.container.className = 'card-container';
+    this.imageCard.className = 'card-image';
+    this.imageCard.style.background = `url("${this.imgPath}") 0 0/cover  no-repeat`;
+
+    this.imageCard.appendChild(this.headerCard);
+    this.imageCard.appendChild(this.scoreCard);
     this.container.appendChild(this.imageCard);
+    this.wrapper.className = 'card-wrapper';
+    this.wrapper.appendChild(this.container);
     this.wrapper.appendChild(this.container);
     this.onEvent();
   }

@@ -1,5 +1,4 @@
-import { IGameArtistPage, GameArtistPage } from '../GamePage/GameArtistPage';
-import { TExtandData } from '../Model';
+import '../../css/cards.css';
 
 export class ArtistsCard {
   container: HTMLDivElement;
@@ -10,7 +9,8 @@ export class ArtistsCard {
   score: number;
   scoreCard: HTMLParagraphElement;
   imageCard: HTMLDivElement;
-  gameArtistPage: IGameArtistPage;
+  onDestroy: () => void;
+  onGameArtistPage: () => void;
 
   constructor(wrapper: HTMLDivElement, header: string, imgPath: string = 'https://klike.net/uploads/posts/2019-05/1556708032_1.jpg', score: number) {
     this.wrapper = wrapper;
@@ -23,25 +23,24 @@ export class ArtistsCard {
     this.imageCard = document.createElement('div');
     this.headerCard.textContent = this.header;
     this.scoreCard.textContent = this.score.toString();
-    this.gameArtistPage = new GameArtistPage();
-
   }
-  onEvent(destroyArtGame: () => void, increaseCounter?: () => void, data?: () => TExtandData) {
+  onEvent() {
     this.container.onclick = () => {
-      destroyArtGame();
-      this.gameArtistPage.render(data, increaseCounter);
+      this.onDestroy();
+      this.onGameArtistPage();
     }
   }
-  render(destroyArtGame: () => void, increaseCounter?: () => void, data?: () => TExtandData) {
-    this.headerCard.setAttribute('style', 'font-family: Gilroy; font-style: normal; font-weight: 500; font-size: 16px; line-height: 18px; letter-spacing: -0.5px;color: #FFFFFF;')
-    this.scoreCard.setAttribute('style', 'font-family: Gilroy; font-style: normal; font-weight: 500; font-size: 16px; line-height: 18px; letter-spacing: -0.5px;color: #FFFFFF;')
-    this.container.setAttribute('style', 'width:155px; height:200px; cursor:pointer;');
-    this.imageCard.setAttribute('style', `background: url("${this.imgPath}") 0 0/cover  no-repeat; width:100%; height:100%; display:flex; justify-content: space-around;`);
+  render() {
+    this.headerCard.className = 'card-header';
+    this.scoreCard.className = 'card-score';
+    this.container.className = 'card-container';
+    this.imageCard.className = 'card-image';
+    this.imageCard.style.background = `url("${this.imgPath}") 0 0/cover  no-repeat`;
     this.imageCard.appendChild(this.headerCard);
     this.imageCard.appendChild(this.scoreCard);
     this.container.appendChild(this.imageCard);
-    this.wrapper.setAttribute('style', 'width:340px; height:100%; display:flex; flex-wrap: wrap; justify-content: space-between;');
+    this.wrapper.className = 'card-wrapper';
     this.wrapper.appendChild(this.container);
-    this.onEvent(destroyArtGame, increaseCounter, data);
+    this.onEvent();
   }
 }

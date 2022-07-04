@@ -117,12 +117,13 @@ h6 {
 
 .page-categories {
     background: #010101;
-    width: 360px;
+    width: 379px;
     height: 640px;
     display: flex;
     flex-direction: column;
     border: rgb(19, 19, 16) 1px solid;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .page-categories footer {
